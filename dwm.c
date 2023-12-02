@@ -1688,6 +1688,11 @@ fullscreen(const Arg *arg)
 	} else {
 		setlayout(&((Arg) { .v = last_layout }));
 	}
+	if (selmon->sel->bw > 0) {
+		selmon->sel->bw = 0;
+	} else {
+		selmon->sel->bw = borderpx;
+	}
 	togglebar(arg);
 }
 
